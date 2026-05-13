@@ -1,5 +1,5 @@
 {
-  "name": "geneaindex",
+  "name": "geneareille",
   "version": "1.0.0",
   "private": true,
   "description": "Genealogical tree viewer — desktop application",
@@ -13,8 +13,8 @@
     "dist:win": "electron-builder --win"
   },
   "build": {
-    "appId": "com.geneaindex.app",
-    "productName": "Geneaindex",
+    "appId": "com.geneareille.app",
+    "productName": "GeneaReille",
     "icon": "assets/icon.png",
     "directories": {
       "output": "dist"

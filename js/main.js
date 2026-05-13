@@ -575,7 +575,7 @@ function setupLinkSearch(data) {
     const individuals = data.individuals || [];
     console.log('[setupLinkSearch] Total individuals available:', individuals.length);
     console.log('[setupLinkSearch] Metadata totalIndividuals:', data.metadata ? data.metadata.totalIndividuals : 'N/A');
-    console.log('[setupLinkSearch] Match check:', individuals.length === (data.metadata ? data.metadata.totalIndividuals : -1) ? '✓ Match' : '✗ Mismatch!');
+    console.log('[setupLinkSearch] Match check:', individuals.length === (data.metadata ? data.metadata.totalIndividuals : -1) ? 'Match' : 'Mismatch!');
     
     // Verify we have all individuals
     if (data.metadata && individuals.length !== data.metadata.totalIndividuals) {

@@ -1,4 +1,4 @@
-# Geneaindex — checklist projet
+# GeneaReille — checklist projet
 
 On coche au fur et à mesure. L’ordre suit la priorité métier (l’icône d’app est en dernier).
 

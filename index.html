@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geneaindex — Arbre généalogique</title>
+    <title>GeneaReille — Arbre généalogique</title>
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components/person-popup.css">
@@ -13,54 +13,54 @@
 <body>
     <header>
         <div class="header-top">
-            <h1 class="header-title">🌳 Geneaindex</h1>
+            <h1 class="header-title">GeneaReille</h1>
             <nav class="main-menu">
-                <button class="menu-item active" data-menu="tree">👥 Ancêtres</button>
-                <button class="menu-item" data-menu="descendants">👶 Descendants</button>
-                <button class="menu-item" data-menu="link">🌳 Arbre complet</button>
-                <button class="menu-item" data-menu="lca">👥 Ancêtre commun</button>
-                <button class="menu-item" data-menu="family">👨‍👩‍👧‍👦 Nom de famille</button>
+                <button class="menu-item active" data-menu="tree">Ancêtres</button>
+                <button class="menu-item" data-menu="descendants">Descendants</button>
+                <button class="menu-item" data-menu="link">Arbre complet</button>
+                <button class="menu-item" data-menu="lca">Ancêtre commun</button>
+                <button class="menu-item" data-menu="family">Nom de famille</button>
             </nav>
             <button type="button" id="menuHelpBtn" class="menu-help-btn" title="Aide sur ce menu" aria-label="Aide sur ce menu">?</button>
         </div>
         <div class="controls" id="treeControls">
             <div class="file-input-wrapper hidden">
                 <input type="file" id="jsonFile" accept=".json">
-                <label for="jsonFile" class="file-label">📁 Charger un fichier JSON</label>
+                <label for="jsonFile" class="file-label">Charger un fichier JSON</label>
             </div>
             <div class="search-wrapper" id="searchWrapper">
-                <input type="text" id="personSearch" placeholder="🔍 Rechercher une personne…" autocomplete="off">
+                <input type="text" id="personSearch" placeholder="Rechercher une personne..." autocomplete="off">
                 <div id="searchResults" class="search-results"></div>
             </div>
             <div class="search-wrapper hidden" id="descendantsSearchWrapper">
                 <div class="descendants-controls-row">
                     <div class="descendants-search-field">
                         <label class="descendants-label" for="descendantsPersonSearch">Personne de départ</label>
-                        <input type="text" id="descendantsPersonSearch" placeholder="🔍 Rechercher une personne…" autocomplete="off">
+                        <input type="text" id="descendantsPersonSearch" placeholder="Rechercher une personne..." autocomplete="off">
                         <div id="descendantsSearchResults" class="search-results"></div>
                     </div>
                 </div>
             </div>
             <div class="search-wrapper hidden" id="linkSearchWrapper">
-                <input type="text" id="linkPersonSearch" placeholder="🔍 Rechercher une personne…" autocomplete="off">
+                <input type="text" id="linkPersonSearch" placeholder="Rechercher une personne..." autocomplete="off">
                 <div id="linkSearchResults" class="search-results"></div>
             </div>
             <div class="search-wrapper hidden" id="lcaSearchWrapper">
                 <div style="display: flex; gap: 1rem; width: 100%;">
                     <div style="flex: 1;">
                         <label style="display: block; margin-bottom: 0.25rem; font-size: 0.85rem; color: #666;">Personne 1 :</label>
-                        <input type="text" id="lcaPerson1Search" placeholder="🔍 Première personne…" autocomplete="off">
+                        <input type="text" id="lcaPerson1Search" placeholder="Première personne..." autocomplete="off">
                         <div id="lcaPerson1Results" class="search-results"></div>
                     </div>
                     <div style="flex: 1;">
                         <label style="display: block; margin-bottom: 0.25rem; font-size: 0.85rem; color: #666;">Personne 2 :</label>
-                        <input type="text" id="lcaPerson2Search" placeholder="🔍 Deuxième personne…" autocomplete="off">
+                        <input type="text" id="lcaPerson2Search" placeholder="Deuxième personne..." autocomplete="off">
                         <div id="lcaPerson2Results" class="search-results"></div>
                     </div>
                 </div>
             </div>
             <div class="search-wrapper hidden" id="familySearchWrapper">
-                <input type="text" id="familyNameSearch" placeholder="🔍 Rechercher un nom de famille…" autocomplete="off">
+                <input type="text" id="familyNameSearch" placeholder="Rechercher un nom de famille..." autocomplete="off">
                 <div id="familyNameResults" class="search-results"></div>
             </div>
         </div>
@@ -71,7 +71,7 @@
             <p>Arbre complet : toutes les personnes, par génération. Utilisez le bouton au centre de la zone pour lancer le chargement.</p>
             <div id="lockControls" class="lock-controls hidden">
                 <button id="clearAllLocks" class="clear-locks-btn" title="Effacer tous les verrous d’arbres familiaux">
-                    ✕ Tout déverrouiller
+                    Tout déverrouiller
                 </button>
             </div>
         </div>

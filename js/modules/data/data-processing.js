@@ -328,18 +328,24 @@ function groupCouples(relationships) {
 function groupParentChildren(relationships, marriages) {
     const parentPairToChildren = new Map();
     const parentChildRels = relationships.filter(rel => rel.type === 'parent-child');
-    
+
+    // Build child -> set(parents) to keep children grouped by their real co-parents.
+    // This avoids mixing children from different unions when a parent has multiple partners.
+    const childToParents = new Map();
     parentChildRels.forEach(rel => {
-        const parentId = rel.from;
-        const childId = rel.to;
-        const spouseId = marriages.get(parentId) ? marriages.get(parentId)[0] : null;
-        const parentKey = spouseId 
-            ? [parentId, spouseId].sort().join('_')
-            : parentId;
-        
+        if (!childToParents.has(rel.to)) {
+            childToParents.set(rel.to, new Set());
+        }
+        childToParents.get(rel.to).add(rel.from);
+    });
+
+    childToParents.forEach((parentsSet, childId) => {
+        const parents = Array.from(parentsSet).sort();
+        const parentKey = parents.join('_');
+
         if (!parentPairToChildren.has(parentKey)) {
             parentPairToChildren.set(parentKey, {
-                parents: spouseId ? [parentId, spouseId] : [parentId],
+                parents,
                 children: []
             });
         }
